@@ -1,0 +1,78 @@
+Practical 4: Controlling Raspberry Pi with Telegram
+
+1. Open Telegram on mobile/PC.
+
+2. Open BotFather.
+
+3. Send /start.
+
+4. Create a new bot using /newbot.
+
+5. Give the bot a name and username.
+
+6. Copy the access token provided by BotFather.
+
+7. Install required packages:
+
+   sudo apt-get install python-pip
+
+8. Install the virtual environment module:
+
+   sudo apt install python3-venv
+
+9. Create a virtual environment:
+
+   python3 -m venv myenv
+
+10. Activate the virtual environment:
+
+    source myenv/bin/activate
+
+11. Install telepot:
+
+    pip install telepot
+
+12. Install RPi.GPIO:
+
+    pip install RPi.GPIO
+
+13. Clone the professor's GitHub repository:
+
+    git clone https://github.com/salmanfarisvp/TelegramBot.git
+
+14. Enter the cloned directory:
+
+    cd TelegramBot
+
+15. Open the Python file:
+
+    nano telegrambot.py
+
+16. Add the BotFather access token in the code.
+
+17. Save and exit nano.
+
+18. Run the program:
+
+    python telegrambot.py
+
+19. Open your Telegram bot.
+
+20. Send:
+    on
+
+    → LED turns ON.
+
+21. Send:
+    off
+
+    → LED turns OFF.
+
+22. LED connection:
+
+    LED positive/long leg → Physical Pin 11
+    LED negative/short leg → Physical Pin 6 (GND)
+
+23. When finished, deactivate the virtual environment:
+
+    deactivate

@@ -1,0 +1,34 @@
+Practical 6: Interfacing Raspberry Pi with 16x2 LCD using I2C
+
+Connections:
+
+Raspberry Pi Pin 1 (3.3V) -> Level Shifter LV
+Raspberry Pi Pin 3 (SDA)  -> Level Shifter LV1
+Raspberry Pi Pin 5 (SCL)  -> Level Shifter LV2
+Raspberry Pi Pin 6 (GND)  -> Level Shifter GND
+
+
+1. Connect the LCD I2C backpack to the Raspberry Pi through the I2C level shifter.
+
+2. Enable I2C:
+   sudo raspi-config
+
+3. Download the LCD Python script:
+   wget https://bitbucket.org/MattHawkinsUK/rpispy-misc/raw/master/python/lcd_i2c.py
+
+4. Check the I2C device:
+   sudo i2cdetect -y 1
+
+5. The LCD should appear at address:
+   0x27
+
+6. Install required packages:
+   sudo apt-get install -y i2c-tools python3-smbus
+
+7. Run the LCD program:
+   sudo python3 lcd_i2c.py
+
+8. The 16×2 LCD will display the programmed messages.
+
+9. To stop the program:
+   Press Ctrl + C
