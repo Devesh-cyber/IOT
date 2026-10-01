@@ -14,7 +14,7 @@ import time
 import datetime
 import tm1637
 
-Display = tm1637.TM1637(clk=16, dio=18)
+Display = tm1637.TM1637(clk=23, dio=24)
 
 Display.write([0, 0, 0, 0])
 Display.brightness(1)

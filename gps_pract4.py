@@ -5,7 +5,10 @@
 #
 # Setup:
 # sudo nano /boot/config.txt
-#
+# 
+# VCC  ─────────→  Power pin 2
+# GND  ─────────→  Pin 6
+# TX   ─────────→  Pin 10
 # Add:
 # dtparam=spi=on
 # dtoverlay=pi3-disable-bt
@@ -25,6 +28,27 @@
 # Run:
 # python3 practical_5_gps.py
 
+# Short Form Code
+import serial
+import pynmea2
+
+port = "/dev/ttyAMA0"
+
+ser = serial.Serial(
+    port,
+    baudrate=9600,
+    timeout=0.5
+)
+
+while True:
+    data = ser.readline()
+
+    if data[0:6] == b'$GPGGA':
+        msg = pynmea2.parse(data.decode())
+        print(msg)
+
+
+# Long Form Code
 import time
 import serial
 import string
